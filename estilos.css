@@ -1,89 +1,85 @@
-:root {
-  --pink-50: #fff5fa;
+/* ---------------- PALETA ROSA ---------------- */
+:root{
+  --pink-50:  #fff5fa;
   --pink-100: #ffe5f0;
   --pink-300: #ffb3d5;
   --pink-500: #ff69b4;
   --pink-900: #7a0048;
 
-  --gray-locked: #999;
-  --white: #ffffff;
+  --gray-locked:#979797;
+  --white:#ffffff;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* ---------------- RESET ---------------- */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Segoe UI",Arial,Helvetica,sans-serif;
+  background:var(--pink-50);
+  color:var(--pink-900);
+  padding:2rem 1rem 4rem;
+}
+h1{
+  text-align:center;
+  margin-bottom:1rem;
+  font-size:clamp(1.5rem,4vw,2.25rem);
+}
+#resetBtn{
+  display:block;
+  margin:0 auto 2rem;
+  background:var(--pink-300);
+  border:none;
+  padding:.6rem 1.4rem;
+  border-radius:8px;
+  font-size:1rem;
+  cursor:pointer;
+  transition:.15s;
+}
+#resetBtn:hover{background:var(--pink-500);color:var(--white)}
+
+.year{
+  padding:1rem;
+  border-left:4px solid var(--pink-300);
+  margin-bottom:2rem;
+}
+.year h2{margin-bottom:.5rem;font-size:1.3rem}
+
+.semester-block{margin-top:1rem}
+.semester-block h3{margin-bottom:.3rem;font-weight:500}
+
+.semester-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:8px;
 }
 
-body {
-  font-family: "Segoe UI", sans-serif;
-  background: var(--pink-50);
-  color: var(--pink-900);
-  padding: 2rem 1rem 4rem;
+/* --------------- BOTONES DE RAMOS --------------- */
+.course{
+  border:2px solid var(--pink-500);
+  border-radius:10px;
+  background:var(--pink-100);
+  padding:.65rem .4rem;
+  font-size:.9rem;
+  cursor:pointer;
+  text-align:center;
+  user-select:none;
+  transition:.15s;
+  line-height:1.25;
 }
-
-h1 {
-  text-align: center;
-  margin-bottom: 1rem;
-  font-size: 2rem;
+.course:hover:not(.locked):not(.done){
+  background:var(--pink-300);
+  transform:scale(1.05);
 }
-
-#resetBtn {
-  display: block;
-  margin: 0 auto 2rem;
-  background: var(--pink-300);
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  color: var(--pink-900);
+.course.locked{
+  border-style:dashed;
+  background:var(--pink-50);
+  color:var(--gray-locked);
+  opacity:.5;
+  cursor:not-allowed;
 }
-#resetBtn:hover {
-  background: var(--pink-500);
-  color: white;
-}
-
-.year {
-  padding: 1rem;
-  border-left: 4px solid var(--pink-300);
-  margin-bottom: 2rem;
-}
-
-.semester {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 8px;
-  margin-top: 0.5rem;
-}
-
-.course {
-  border: 2px solid var(--pink-500);
-  border-radius: 10px;
-  background: var(--pink-100);
-  padding: 0.7rem;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: 0.15s;
-  text-align: center;
-  user-select: none;
-}
-.course:hover:not(.locked):not(.done) {
-  background: var(--pink-300);
-  transform: scale(1.05);
-}
-.course.locked {
-  border-style: dashed;
-  background: var(--pink-50);
-  color: var(--gray-locked);
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-.course.unlocked {
-  background: var(--pink-300);
-}
-.course.done {
-  background: var(--pink-500);
-  color: var(--white);
-  text-decoration: line-through;
+.course.unlocked{background:var(--pink-300)}
+.course.done{
+  background:var(--pink-500);
+  color:var(--white);
+  text-decoration:line-through;
+  cursor:default;
 }
