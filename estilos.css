@@ -1,1 +1,54 @@
+/* ----  PALETA ROSA ---- */
+:root{
+  --pink‑50:  #fff5fa;
+  --pink‑100: #ffe5f0;
+  --pink‑300: #ffb3d5;
+  --pink‑500: #ff69b4;
+  --pink‑900: #7a0048;
 
+  --gray‑locked: #858585;
+  --white: #ffffff;
+}
+
+/* ----  RESET BÁSICO ---- */
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family: "Segoe UI", sans-serif;
+  background: var(--pink‑50);
+  color: var(--pink‑900);
+  padding: 2rem 1rem 4rem;
+}
+h1{text-align:center;margin-bottom:2rem;font-size:2rem}
+h2{margin-top:2rem;margin-bottom:.5rem}
+h3{margin:.75rem 0 .5rem}
+
+/* ----  CONTENEDORES ---- */
+.year{padding:1rem;border-left:4px solid var(--pink‑300)}
+.semester{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+
+/* ----  CURSOS ---- */
+.course{
+  border:2px solid var(--pink‑500);
+  border-radius:10px;
+  background:var(--pink‑100);
+  padding:.65rem;
+  font-size:.9rem;
+  cursor:pointer;
+  transition:.15s;
+  text-align:center;
+  user-select:none;
+}
+.course:hover:not(.locked):not(.done){background:var(--pink‑300);transform:scale(1.05)}
+.course.locked{
+  border-style:dashed;
+  background:var(--pink‑50);
+  color:var(--gray‑locked);
+  opacity:.45;
+  cursor:not-allowed;
+}
+.course.unlocked{background:var(--pink‑300)}
+.course.done{
+  background:var(--pink‑500);
+  color:var(--white);
+  text-decoration:line-through;
+}
