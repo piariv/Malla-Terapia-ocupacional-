@@ -1,4 +1,4 @@
-/* ---------------- PALETA ROSA ---------------- */
+/* ---------- PALETA ROSA ---------- */
 :root{
   --pink-50:  #fff5fa;
   --pink-100: #ffe5f0;
@@ -6,11 +6,11 @@
   --pink-500: #ff69b4;
   --pink-900: #7a0048;
 
-  --gray-locked:#979797;
+  --gray-locked:#9d9d9d;
   --white:#ffffff;
 }
 
-/* ---------------- RESET ---------------- */
+/* ---------- RESET ---------- */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{
   font-family:"Segoe UI",Arial,Helvetica,sans-serif;
@@ -21,14 +21,16 @@ body{
 h1{
   text-align:center;
   margin-bottom:1rem;
-  font-size:clamp(1.5rem,4vw,2.25rem);
+  font-size:clamp(1.6rem,4vw,2.4rem);
 }
+
+/* ---------- BOTÓN RESET ---------- */
 #resetBtn{
   display:block;
   margin:0 auto 2rem;
   background:var(--pink-300);
   border:none;
-  padding:.6rem 1.4rem;
+  padding:.65rem 1.5rem;
   border-radius:8px;
   font-size:1rem;
   cursor:pointer;
@@ -36,6 +38,7 @@ h1{
 }
 #resetBtn:hover{background:var(--pink-500);color:var(--white)}
 
+/* ---------- ESTRUCTURA POR AÑO / SEMESTRE ---------- */
 .year{
   padding:1rem;
   border-left:4px solid var(--pink-300);
@@ -52,7 +55,7 @@ h1{
   gap:8px;
 }
 
-/* --------------- BOTONES DE RAMOS --------------- */
+/* ---------- BOTONES DE CURSOS ---------- */
 .course{
   border:2px solid var(--pink-500);
   border-radius:10px;
@@ -76,10 +79,12 @@ h1{
   opacity:.5;
   cursor:not-allowed;
 }
-.course.unlocked{background:var(--pink-300)}
+.course.unlocked{
+  background:var(--pink-300);
+}
 .course.done{
   background:var(--pink-500);
   color:var(--white);
   text-decoration:line-through;
-  cursor:default;
+  cursor:pointer;          /* permite Shift‑clic para des‑marcar */
 }
